@@ -172,7 +172,7 @@ const fakeRequest =()=> {
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
             if (delay <= 1000)resolve("Success")
-            else reject("failure")
+            else reject("Failure")
         }, delay)
         
       
