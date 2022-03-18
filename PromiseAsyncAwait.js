@@ -106,30 +106,85 @@
 // .catch((d)=>console.log(d))
 
 //3/16/22
-const fakeRequest=()=>{
-    let delay = Math.floor(Math.random() * 3) *1000
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            (delay < 1000)? resolve("success"):reject("failure")
-        }, delay)
+// const fakeRequest=()=>{
+//     let delay = Math.floor(Math.random() * 3) *1000
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             (delay < 1000)? resolve("success"):reject("failure")
+//         }, delay)
 
 
-    })
-}
+//     })
+// }
 
 // fakeRequest()
 // .then((data)=>console.log(data + " Success"))
 // .catch((data)=>console.log(data+ " Failure"))
 
 
-async function makeTwoRequests(){
-    try{
+// async function makeTwoRequests(){
+//     try{
       
-        console.log(await fakeRequest())
+//         console.log(await fakeRequest())
 
-    }catch(e){
+//     }catch(e){
 
-        console.log("Caught an error: " +e)
-    }
+//         console.log("Caught an error: " +e)
+//     }
+// }
+// makeTwoRequests()
+
+// const fakeRequest=()=>{
+//     let delay = Math.floor(Math.random()*3) *1000
+
+//     return new Promise((resolve, reject)=>{
+//         console.log(delay)
+//         setTimeout(()=>{
+//             if(delay < 1000) resolve("success")
+//             else reject ("failure")
+//         }, delay)
+
+
+//     })
+// }
+
+// fakeRequest()
+// .then(data=>console.log(data))
+// .catch(data=>console.log(data))
+
+//3/17/22
+// makeRequest=async()=>{
+//     try{
+// console.log(await fakeRequest())
+//     }
+//     catch(err){
+// console.log(err)
+//     }
+
+// }
+
+
+
+   
+const fakeRequest =()=> {
+    let delay = Math.floor(Math.random()*3) * 1000
+    console.log(delay)
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            if (delay <= 1000)resolve("Success")
+            else reject("failure")
+        }, delay)
+        
+      
+    })
+  
 }
-makeTwoRequests()
+
+makeRequest =() => {
+    fakeRequest().then((data) => {
+      console.log(data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+  makeRequest()
